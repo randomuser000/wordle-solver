@@ -89,6 +89,8 @@ if st.button("Enter!"):
     st.write(black)
     st.write(yellow)
 
+black = black
+
 guess2 = st.text_input("Enter your second guess (all lowercase)", "Ex: great")   #ask for 2nd guess
 clues2 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bybbb") #ask for clues from 2nd guess
 
