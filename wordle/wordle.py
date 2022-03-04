@@ -93,35 +93,42 @@ if st.button("Enter!"):
     checkValidWords()
     st.write(green)
     st.write(black)
-    st.write(black)
     st.write(yellow)
 
 guess2 = st.text_input("Enter your second guess (all lowercase)", "Ex: great")   #ask for 2nd guess
 clues2 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bybbb") #ask for clues from 2nd guess
 
+green2 = green
+yellow2 = yellow
+black2 = black
+
 if st.button("Go!"):
     guess2arr = list(guess2)    #convert word into an array
     clues2arr = list(clues2)    #convert clues into an array
-    st.write(black)
     for i in range(5):
         if clues2arr[loopInt] == "g":
-            green[loopInt] = guess2arr[loopInt]
+            green2[loopInt] = guess2arr[loopInt]
         if clues2arr[loopInt] == "y":
-            yellow[loopInt+5] = guess2arr[loopInt]
+            yellow2[loopInt+5] = guess2arr[loopInt]
         if clues2arr[loopInt] == "b":
-            if guess2arr[loopInt] not in green and guess2arr[loopInt] not in yellow:
-                black.append(guess2arr[loopInt])
+            if guess2arr[loopInt] not in green2 and guess2arr[loopInt] not in yellow2:
+                black2.append(guess2arr[loopInt])
         loopInt += 1
     loopInt = 0
 
     possibleWords.clear()
     checkValidWords()
-    st.write(green)
-    st.write(black)
-    st.write(yellow)
+    st.write(green2)
+    st.write(black2)
+    st.write(yellow2)
 
 guess3 = st.text_input("Enter your third guess (all lowercase)", "Ex: crane")   #ask for 3rd guess
 clues3 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bbgyb") #ask for clues from 3rd guess
+
+green3 = green2
+yellow3 = yellow2
+black3 = black2
+
 
 if st.button("Submit!"):
     guess3arr = list(guess3)    #convert word into an array
@@ -129,12 +136,12 @@ if st.button("Submit!"):
 
     for i in range(5):
         if clues3arr[loopInt] == "g":
-            green[loopInt] = guess3arr[loopInt]
+            green3[loopInt] = guess3arr[loopInt]
         if clues3arr[loopInt] == "y":
-            yellow[loopInt+10] = guess3arr[loopInt]
+            yellow3[loopInt+10] = guess3arr[loopInt]
         if clues3arr[loopInt] == "b":
-            if guess3arr[loopInt] not in green and guess3arr[loopInt] not in yellow:
-                black.append(guess3arr[loopInt])
+            if guess3arr[loopInt] not in green3 and guess3arr[loopInt] not in yellow3:
+                black3.append(guess3arr[loopInt])
         loopInt += 1
     loopInt = 0
 
@@ -147,18 +154,23 @@ if st.button("Submit!"):
 guess4 = st.text_input("Enter your fourth guess (all lowercase)", "Ex: track")   #ask for 4th guess
 clues4 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gyybb") #ask for clues from 4th guess
 
+green4 = green3
+yellow4 = yellow3
+black4 = black3
+
+
 if st.button("Continue!"):
     guess4arr = list(guess4)    #convert word into an array
     clues4arr = list(clues4)    #convert clues into an array
 
     for i in range(5):
         if clues4arr[loopInt] == "g":
-            green[loopInt] = guess4arr[loopInt]
+            green4[loopInt] = guess4arr[loopInt]
         if clues4arr[loopInt] == "y":
-            yellow[loopInt+15] = guess4arr[loopInt]
+            yellow4[loopInt+15] = guess4arr[loopInt]
         if clues4arr[loopInt] == "b":
-            if guess4arr[loopInt] not in green and guess4arr[loopInt] not in yellow:
-                black.append(guess4arr[loopInt])
+            if guess4arr[loopInt] not in green4 and guess4arr[loopInt] not in yellow4:
+                black4.append(guess4arr[loopInt])
         loopInt += 1
     loopInt = 0
 
@@ -171,18 +183,23 @@ if st.button("Continue!"):
 guess5 = st.text_input("Enter your fifth guess", "Ex: wings")   #ask for 5th guess
 clues5 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bgyyb") #ask for clues from 5th guess
 
+green5 = green4
+yellow5 = yellow4
+black5 = black4
+
+
 if st.button("Return!"):
     guess5arr = list(guess5)    #convert word into an array
     clues5arr = list(clues5)    #convert clues into an array
 
     for i in range(5):
         if clues5arr[loopInt] == "g":
-            green[loopInt] = guess5arr[loopInt]
+            green5[loopInt] = guess5arr[loopInt]
         if clues5arr[loopInt] == "y":
-            yellow[loopInt+20] = guess5arr[loopInt]
+            yellow5[loopInt+20] = guess5arr[loopInt]
         if clues5arr[loopInt] == "b":
-            if guess5arr[loopInt] not in green and guess5arr not in yellow:
-                black.append(guess5arr[loopInt])
+            if guess5arr[loopInt] not in green5 and guess5arr not in yellow5:
+                black5.append(guess5arr[loopInt])
         loopInt += 1
     loopInt = 0
 
