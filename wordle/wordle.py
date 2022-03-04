@@ -62,7 +62,7 @@ def checkValidWords():
                     wordPossible = True
         if wordPossible == True:
             possibleWords.append(word)
-    st.success("Possible words: " + possibleWords)
+    st.write(possibleWords)
 
 st.title("WORDLE SOLVER")
 
