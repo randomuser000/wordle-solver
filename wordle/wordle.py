@@ -89,15 +89,13 @@ if st.button("Enter!"):
     st.write(black)
     st.write(yellow)
 
-black = black
-
 guess2 = st.text_input("Enter your second guess (all lowercase)", "Ex: great")   #ask for 2nd guess
 clues2 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bybbb") #ask for clues from 2nd guess
 
 if st.button("Go!"):
     guess2arr = list(guess2)    #convert word into an array
     clues2arr = list(clues2)    #convert clues into an array
-
+    st.write(black)
     for i in range(5):
         if clues2arr[loopInt] == "g":
             green[loopInt] = guess2arr[loopInt]
