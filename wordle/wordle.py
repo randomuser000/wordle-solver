@@ -85,6 +85,9 @@ if st.button("Enter!"):
     loopInt = 0
 
     checkValidWords()
+    st.write(green)
+    st.write(black)
+    st.write(yellow)
 
 guess2 = st.text_input("Enter your second guess (all lowercase)", "Ex: great")   #ask for 2nd guess
 clues2 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bybbb") #ask for clues from 2nd guess
@@ -106,6 +109,9 @@ if st.button("Go!"):
 
     possibleWords.clear()
     checkValidWords()
+    st.write(green)
+    st.write(black)
+    st.write(yellow)
 
 guess3 = st.text_input("Enter your third guess (all lowercase)", "Ex: crane")   #ask for 3rd guess
 clues3 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bbgyb") #ask for clues from 3rd guess
@@ -127,6 +133,9 @@ if st.button("Submit!"):
 
     possibleWords.clear()
     checkValidWords()
+    st.write(green)
+    st.write(black)
+    st.write(yellow)
 
 guess4 = st.text_input("Enter your fourth guess (all lowercase)", "Ex: track")   #ask for 4th guess
 clues4 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gyybb") #ask for clues from 4th guess
@@ -148,6 +157,9 @@ if st.button("Continue!"):
 
     possibleWords.clear()
     checkValidWords()
+    st.write(green)
+    st.write(black)
+    st.write(yellow)
 
 guess5 = st.text_input("Enter your fifth guess", "Ex: wings")   #ask for 5th guess
 clues5 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bgyyb") #ask for clues from 5th guess
