@@ -1,4 +1,7 @@
-f = open("words.txt", "r")       #open text file with list of 5 letter words to read
+from pathlib import Path
+
+p = Path(__file__).with_name('words.txt')
+f = open(p, "r")       #open text file with list of 5 letter words to read
 
 green = ['', '', '', '', '']      #array for letters in correct spot
 yellow = ['', '', '', '', '']     #array for letters in word but wrong spot
