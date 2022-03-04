@@ -1,4 +1,5 @@
 from pathlib import Path
+import streamlit as st
 
 p = Path(__file__).with_name('words.txt')
 f = open(p, "r")       #open text file with list of 5 letter words to read
@@ -61,93 +62,105 @@ def checkValidWords():
                     wordPossible = True
         if wordPossible == True:
             possibleWords.append(word)
-    print(possibleWords)
+    st.success("Possible words: " + possibleWords)
 
-guess1 = input("enter your first guess (ex: great)")   #ask for 1st guess
-clues1 = input("enter the colors of the letters in order (g = green, y = yellow, b = black; ex: gybbb)") #ask for clues from 1st guess
-guess1arr = list(guess1)    #convert word into an array
-clues1arr = list(clues1)    #convert clues into an array
+st.title("WORDLE SOLVER")
 
-for i in range(5):
-    if clues1arr[loopInt] == "g":
-        green[loopInt] = guess1arr[loopInt]
-    if clues1arr[loopInt] == "y":
-        yellow[loopInt] = guess1arr[loopInt]
-    if clues1arr[loopInt] == "b":
-        black.append(guess1arr[loopInt])
-    loopInt += 1
-loopInt = 0
+guess1 = st.text_input("Enter your first guess (all lowercase)", "Ex: hello")   #ask for 1st guess
+clues1 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gybbb") #ask for clues from 1st guess
 
-checkValidWords()
+if st.button("Enter"):
+    guess1arr = list(guess1)    #convert word into an array
+    clues1arr = list(clues1)    #convert clues into an array
 
-guess2 = input("enter your second guess (ex: great)")   #ask for 1st guess
-clues2 = input("enter the colors of the letters in order (g = green, y = yellow, b = black; ex: gybbb)") #ask for clues from 1st guess
-guess2arr = list(guess2)    #convert word into an array
-clues2arr = list(clues2)    #convert clues into an array
+    for i in range(5):
+        if clues1arr[loopInt] == "g":
+            green[loopInt] = guess1arr[loopInt]
+        if clues1arr[loopInt] == "y":
+            yellow[loopInt] = guess1arr[loopInt]
+        if clues1arr[loopInt] == "b":
+            black.append(guess1arr[loopInt])
+        loopInt += 1
+    loopInt = 0
 
-for i in range(5):
-    if clues2arr[loopInt] == "g":
-        green[loopInt] = guess2arr[loopInt]
-    if clues2arr[loopInt] == "y":
-        yellow[loopInt] = guess2arr[loopInt]
-    if clues2arr[loopInt] == "b":
-        black.append(guess2arr[loopInt])
-    loopInt += 1
-loopInt = 0
+    checkValidWords()
 
-possibleWords.clear()
-checkValidWords()
+guess2 = st.text_input("Enter your second guess (all lowercase)", "Ex: great")   #ask for 2nd guess
+clues2 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gybbb") #ask for clues from 2nd guess
 
-guess3 = input("enter your third guess (ex: great)")   #ask for 1st guess
-clues3 = input("enter the colors of the letters in order (g = green, y = yellow, b = black; ex: gybbb)") #ask for clues from 1st guess
-guess3arr = list(guess3)    #convert word into an array
-clues3arr = list(clues3)    #convert clues into an array
+if st.button("Enter"):
+    guess2arr = list(guess2)    #convert word into an array
+    clues2arr = list(clues2)    #convert clues into an array
 
-for i in range(5):
-    if clues3arr[loopInt] == "g":
-        green[loopInt] = guess3arr[loopInt]
-    if clues3arr[loopInt] == "y":
-        yellow[loopInt] = guess3arr[loopInt]
-    if clues3arr[loopInt] == "b":
-        black.append(guess3arr[loopInt])
-    loopInt += 1
-loopInt = 0
+    for i in range(5):
+        if clues2arr[loopInt] == "g":
+            green[loopInt] = guess2arr[loopInt]
+        if clues2arr[loopInt] == "y":
+            yellow[loopInt] = guess2arr[loopInt]
+        if clues2arr[loopInt] == "b":
+            black.append(guess2arr[loopInt])
+        loopInt += 1
+    loopInt = 0
 
-possibleWords.clear()
-checkValidWords()
+    possibleWords.clear()
+    checkValidWords()
 
-guess4 = input("enter your fourth guess (ex: great)")   #ask for 1st guess
-clues4 = input("enter the colors of the letters in order (g = green, y = yellow, b = black; ex: gybbb)") #ask for clues from 1st guess
-guess4arr = list(guess4)    #convert word into an array
-clues4arr = list(clues4)    #convert clues into an array
+guess3 = st.text_input("Enter your third guess (all lowercase)", "Ex: great")   #ask for 3rd guess
+clues3 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gybbb") #ask for clues from 3rd guess
 
-for i in range(5):
-    if clues4arr[loopInt] == "g":
-        green[loopInt] = guess4arr[loopInt]
-    if clues4arr[loopInt] == "y":
-        yellow[loopInt] = guess4arr[loopInt]
-    if clues4arr[loopInt] == "b":
-        black.append(guess4arr[loopInt])
-    loopInt += 1
-loopInt = 0
+if st.button("Enter"):
+    guess3arr = list(guess3)    #convert word into an array
+    clues3arr = list(clues3)    #convert clues into an array
 
-possibleWords.clear()
-checkValidWords()
+    for i in range(5):
+        if clues3arr[loopInt] == "g":
+            green[loopInt] = guess3arr[loopInt]
+        if clues3arr[loopInt] == "y":
+            yellow[loopInt] = guess3arr[loopInt]
+        if clues3arr[loopInt] == "b":
+            black.append(guess3arr[loopInt])
+        loopInt += 1
+    loopInt = 0
 
-guess5 = input("enter your fifth guess (ex: great)")   #ask for 1st guess
-clues5 = input("enter the colors of the letters in order (g = green, y = yellow, b = black; ex: gybbb)") #ask for clues from 1st guess
-guess5arr = list(guess5)    #convert word into an array
-clues5arr = list(clues5)    #convert clues into an array
+    possibleWords.clear()
+    checkValidWords()
 
-for i in range(5):
-    if clues5arr[loopInt] == "g":
-        green[loopInt] = guess5arr[loopInt]
-    if clues5arr[loopInt] == "y":
-        yellow[loopInt] = guess5arr[loopInt]
-    if clues5arr[loopInt] == "b":
-        black.append(guess5arr[loopInt])
-    loopInt += 1
-loopInt = 0
+guess4 = st.text_input("Enter your fourth guess (all lowercase)", "Ex: great")   #ask for 4th guess
+clues4 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gybbb") #ask for clues from 4th guess
 
-possibleWords.clear()
-checkValidWords()
+if st.button("Enter"):
+    guess4arr = list(guess4)    #convert word into an array
+    clues4arr = list(clues4)    #convert clues into an array
+
+    for i in range(5):
+        if clues4arr[loopInt] == "g":
+            green[loopInt] = guess4arr[loopInt]
+        if clues4arr[loopInt] == "y":
+            yellow[loopInt] = guess4arr[loopInt]
+        if clues4arr[loopInt] == "b":
+            black.append(guess4arr[loopInt])
+        loopInt += 1
+    loopInt = 0
+
+    possibleWords.clear()
+    checkValidWords()
+
+guess5 = st.text_input("enter your fifth guess (ex: great)")   #ask for 5th guess
+clues5 = st.text_input("enter the colors of the letters in order (g = green, y = yellow, b = black; ex: gybbb)") #ask for clues from 5th guess
+
+if st.button("Enter"):
+    guess5arr = list(guess5)    #convert word into an array
+    clues5arr = list(clues5)    #convert clues into an array
+
+    for i in range(5):
+        if clues5arr[loopInt] == "g":
+            green[loopInt] = guess5arr[loopInt]
+        if clues5arr[loopInt] == "y":
+            yellow[loopInt] = guess5arr[loopInt]
+        if clues5arr[loopInt] == "b":
+            black.append(guess5arr[loopInt])
+        loopInt += 1
+    loopInt = 0
+
+    possibleWords.clear()
+    checkValidWords()
