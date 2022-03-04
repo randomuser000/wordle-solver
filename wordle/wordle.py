@@ -1,4 +1,4 @@
-f = open("C://Users//thrya//OneDrive//Documents//code//wordle//words.txt", "r")       #open text file with list of 5 letter words to read
+f = open("words.txt", "r")       #open text file with list of 5 letter words to read
 
 green = ['', '', '', '', '']      #array for letters in correct spot
 yellow = ['', '', '', '', '']     #array for letters in word but wrong spot
