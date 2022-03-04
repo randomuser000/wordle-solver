@@ -17,11 +17,6 @@ for wordInFile in f:
     allWordsArray.append(newWord)
 
 def checkValidWords():
-    global green
-    global yellow 
-    global possibleWords 
-    global allWordsArray 
-
     for word in allWordsArray:
         wordArr = list(word)
         wordPossible = True
@@ -47,6 +42,18 @@ def checkValidWords():
                         wordPossible = False
                         break
                     if yellow[yellowLoopInt] == wordArr[yellowLoopInt]:
+                        wordPossible = False
+                        break
+                    elif yellow[yellowLoopInt+5] != '' and yellow[yellowLoopInt+5] == wordArr[yellowLoopInt]:
+                        wordPossible = False
+                        break
+                    elif yellow[yellowLoopInt+10] != '' and yellow[yellowLoopInt+10] == wordArr[yellowLoopInt]:
+                        wordPossible = False
+                        break
+                    elif yellow[yellowLoopInt+15] != '' and yellow[yellowLoopInt+15] == wordArr[yellowLoopInt]:
+                        wordPossible = False
+                        break
+                    elif yellow[yellowLoopInt+20] != '' and yellow[yellowLoopInt+20] == wordArr[yellowLoopInt]:
                         wordPossible = False
                         break
                 else:
@@ -78,7 +85,7 @@ if st.button("Enter!"):
         if clues1arr[loopInt] == "y":
             yellow[loopInt] = guess1arr[loopInt]
         if clues1arr[loopInt] == "b":
-            if guess1arr not in green and guess1arr not in yellow:
+            if guess1arr[loopInt] not in green and guess1arr[loopInt] not in yellow:
                 black.append(guess1arr[loopInt])
         loopInt += 1
     loopInt = 0
@@ -100,9 +107,9 @@ if st.button("Go!"):
         if clues2arr[loopInt] == "g":
             green[loopInt] = guess2arr[loopInt]
         if clues2arr[loopInt] == "y":
-            yellow[loopInt] = guess2arr[loopInt]
+            yellow[loopInt+5] = guess2arr[loopInt]
         if clues2arr[loopInt] == "b":
-            if guess2arr not in green and guess2arr not in yellow:
+            if guess2arr[loopInt] not in green and guess2arr[loopInt] not in yellow:
                 black.append(guess2arr[loopInt])
         loopInt += 1
     loopInt = 0
@@ -124,9 +131,9 @@ if st.button("Submit!"):
         if clues3arr[loopInt] == "g":
             green[loopInt] = guess3arr[loopInt]
         if clues3arr[loopInt] == "y":
-            yellow[loopInt] = guess3arr[loopInt]
+            yellow[loopInt+10] = guess3arr[loopInt]
         if clues3arr[loopInt] == "b":
-            if guess3arr not in green and guess3arr not in yellow:
+            if guess3arr[loopInt] not in green and guess3arr[loopInt] not in yellow:
                 black.append(guess3arr[loopInt])
         loopInt += 1
     loopInt = 0
@@ -148,9 +155,9 @@ if st.button("Continue!"):
         if clues4arr[loopInt] == "g":
             green[loopInt] = guess4arr[loopInt]
         if clues4arr[loopInt] == "y":
-            yellow[loopInt] = guess4arr[loopInt]
+            yellow[loopInt+15] = guess4arr[loopInt]
         if clues4arr[loopInt] == "b":
-            if guess4arr not in green and guess4arr not in yellow:
+            if guess4arr[loopInt] not in green and guess4arr[loopInt] not in yellow:
                 black.append(guess4arr[loopInt])
         loopInt += 1
     loopInt = 0
@@ -172,9 +179,9 @@ if st.button("Return!"):
         if clues5arr[loopInt] == "g":
             green[loopInt] = guess5arr[loopInt]
         if clues5arr[loopInt] == "y":
-            yellow[loopInt] = guess5arr[loopInt]
+            yellow[loopInt+20] = guess5arr[loopInt]
         if clues5arr[loopInt] == "b":
-            if guess5arr not in green and guess5arr not in yellow:
+            if guess5arr[loopInt] not in green and guess5arr not in yellow:
                 black.append(guess5arr[loopInt])
         loopInt += 1
     loopInt = 0
