@@ -19,7 +19,6 @@ for wordInFile in f:
 def checkValidWords():
     global green
     global yellow 
-    global black 
     global possibleWords 
     global allWordsArray 
 
