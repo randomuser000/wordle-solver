@@ -87,10 +87,11 @@ if st.button("Enter!"):
     checkValidWords()
     st.write(green)
     st.write(black)
+    st.write(black)
     st.write(yellow)
 
 guess2 = st.text_input("Enter your second guess (all lowercase)", "Ex: great")   #ask for 2nd guess
-clues2 = st.text_input("Enter the colors of the letters in order", "Ex: bybbb") #ask for clues from 2nd guess
+clues2 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bybbb") #ask for clues from 2nd guess
 
 if st.button("Go!"):
     guess2arr = list(guess2)    #convert word into an array
