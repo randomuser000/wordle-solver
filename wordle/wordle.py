@@ -174,3 +174,4 @@ if st.button("Return!"):
 
     possibleWords.clear()
     checkValidWords()
+    st.write(black)
