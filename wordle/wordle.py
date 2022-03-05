@@ -77,7 +77,7 @@ st.title("WORDLE SOLVER")
 guess1 = st.text_input("Enter your first guess (all lowercase)", "Ex: hello")   #ask for 1st guess
 clues1 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gybbb") #ask for clues from 1st guess
 
-if st.button("Enter!"):
+if st.checkbox("Enter!"):
     guess1arr = list(guess1)    #convert word into an array
     clues1arr = list(clues1)    #convert clues into an array
 
@@ -93,14 +93,11 @@ if st.button("Enter!"):
     loopInt = 0
 
     checkValidWords()
-    st.write(green)
-    st.write(black)
-    st.write(yellow)
 
 guess2 = st.text_input("Enter your second guess (all lowercase)", "Ex: great")   #ask for 2nd guess
 clues2 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bybbb") #ask for clues from 2nd guess
 
-if st.button("Go!"):
+if st.checkbox("Go!"):
     guess2arr = list(guess2)    #convert word into an array
     clues2arr = list(clues2)    #convert clues into an array
     for i in range(5):
@@ -116,14 +113,11 @@ if st.button("Go!"):
 
     possibleWords.clear()
     checkValidWords()
-    st.write(green)
-    st.write(black)
-    st.write(yellow)
 
 guess3 = st.text_input("Enter your third guess (all lowercase)", "Ex: crane")   #ask for 3rd guess
 clues3 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bbgyb") #ask for clues from 3rd guess
 
-if st.button("Submit!"):
+if st.checkbox("Submit!"):
     guess3arr = list(guess3)    #convert word into an array
     clues3arr = list(clues3)    #convert clues into an array
 
@@ -140,14 +134,11 @@ if st.button("Submit!"):
 
     possibleWords.clear()
     checkValidWords()
-    st.write(green)
-    st.write(black)
-    st.write(yellow)
 
 guess4 = st.text_input("Enter your fourth guess (all lowercase)", "Ex: track")   #ask for 4th guess
 clues4 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: gyybb") #ask for clues from 4th guess
 
-if st.button("Continue!"):
+if st.checkbox("Continue!"):
     guess4arr = list(guess4)    #convert word into an array
     clues4arr = list(clues4)    #convert clues into an array
 
@@ -164,14 +155,11 @@ if st.button("Continue!"):
 
     possibleWords.clear()
     checkValidWords()
-    st.write(green)
-    st.write(black)
-    st.write(yellow)
 
 guess5 = st.text_input("Enter your fifth guess", "Ex: wings")   #ask for 5th guess
 clues5 = st.text_input("Enter the colors of the letters in order (g = green, y = yellow, b = black)", "Ex: bgyyb") #ask for clues from 5th guess
 
-if st.button("Return!"):
+if st.checkbox("Return!"):
     guess5arr = list(guess5)    #convert word into an array
     clues5arr = list(clues5)    #convert clues into an array
 
@@ -188,6 +176,3 @@ if st.button("Return!"):
 
     possibleWords.clear()
     checkValidWords()
-    st.write(green)
-    st.write(black)
-    st.write(yellow)
